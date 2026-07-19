@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Zhang Zherui — March-77</title>
+  <desc id="desc">A neon terminal-inspired banner for an AI systems developer.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070b18"/>
+      <stop offset="0.52" stop-color="#11132b"/>
+      <stop offset="1" stop-color="#071525"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="0.5" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#60a5fa"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="70%" cy="30%" r="70%">
+      <stop offset="0" stop-color="#7c3aed" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#94a3b8" stroke-opacity=".08"/>
+    </pattern>
+    <filter id="soft-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="frame">
+      <rect x="1" y="1" width="1198" height="358" rx="26"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="360" fill="url(#background)"/>
+    <rect width="1200" height="360" fill="url(#grid)"/>
+    <rect width="1200" height="360" fill="url(#glow)"/>
+    <circle cx="1050" cy="68" r="180" fill="#06b6d4" opacity=".06"/>
+    <circle cx="930" cy="320" r="230" fill="#8b5cf6" opacity=".08"/>
+
+    <g opacity=".65">
+      <path d="M825 42h270" stroke="url(#accent)" stroke-width="2"/>
+      <path d="M875 58h220" stroke="#22d3ee" stroke-opacity=".45"/>
+      <circle cx="1110" cy="42" r="5" fill="#22d3ee">
+        <animate attributeName="opacity" values=".25;1;.25" dur="2.4s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <g transform="translate(74 64)">
+      <rect width="470" height="42" rx="11" fill="#0f172a" stroke="#334155"/>
+      <circle cx="22" cy="21" r="5" fill="#fb7185"/>
+      <circle cx="40" cy="21" r="5" fill="#facc15"/>
+      <circle cx="58" cy="21" r="5" fill="#4ade80"/>
+      <text x="82" y="27" fill="#94a3b8" font-family="'SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="15">~/systems/profile</text>
+    </g>
+
+    <text x="74" y="170" fill="#f8fafc" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="61" font-weight="800" letter-spacing="3">ZHANG ZHERUI</text>
+    <rect x="74" y="191" width="520" height="5" rx="2.5" fill="url(#accent)" filter="url(#soft-glow)"/>
+    <text x="74" y="236" fill="#a5b4fc" font-family="'SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="24">@March-77</text>
+    <text x="74" y="278" fill="#cbd5e1" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="20">Building observable AI agents, retrieval systems, and developer tools.</text>
+
+    <g transform="translate(704 126)" font-family="'SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="15">
+      <rect x="0" y="0" width="176" height="40" rx="20" fill="#8b5cf6" fill-opacity=".15" stroke="#8b5cf6"/>
+      <text x="88" y="25" text-anchor="middle" fill="#c4b5fd">AI AGENTS</text>
+      <rect x="194" y="0" width="184" height="40" rx="20" fill="#06b6d4" fill-opacity=".12" stroke="#22d3ee"/>
+      <text x="286" y="25" text-anchor="middle" fill="#67e8f9">RAG SYSTEMS</text>
+      <rect x="0" y="58" width="238" height="40" rx="20" fill="#3b82f6" fill-opacity=".12" stroke="#60a5fa"/>
+      <text x="119" y="83" text-anchor="middle" fill="#93c5fd">DISTRIBUTED BACKENDS</text>
+      <rect x="256" y="58" width="176" height="40" rx="20" fill="#14b8a6" fill-opacity=".12" stroke="#2dd4bf"/>
+      <text x="344" y="83" text-anchor="middle" fill="#5eead4">DEV TOOLS</text>
+    </g>
+
+    <text x="1126" y="325" text-anchor="end" fill="#64748b" font-family="'SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="14">STATUS: BUILDING ▰</text>
+  </g>
+  <rect x="1" y="1" width="1198" height="358" rx="26" fill="none" stroke="url(#accent)" stroke-opacity=".55" stroke-width="2"/>
+</svg>
