@@ -52,6 +52,32 @@ jobs:
           path: profile/languages-light.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Validate generated statistics cards
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          cards=(
+            profile/stats-dark.svg
+            profile/stats-light.svg
+            profile/languages-dark.svg
+            profile/languages-light.svg
+          )
+
+          for card in "${cards[@]}"; do
+            if [[ ! -s "$card" ]] || ! grep -q "<svg" "$card"; then
+              echo "::error file=$card::Generated card is empty or is not an SVG"
+              exit 1
+            fi
+
+            if grep -Eqi \
+              "Something went wrong|Resource not accessible|Please try again later" \
+              "$card"; then
+              echo "::error file=$card::Generated card contains an upstream API error"
+              exit 1
+            fi
+          done
+
       - name: Generate contribution snake
         uses: Platane/snk/svg-only@v3
         with:
