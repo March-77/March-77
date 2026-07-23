@@ -57,6 +57,7 @@ jobs:
         run: |
           set -euo pipefail
 
+          invalid_count=0
           cards=(
             profile/stats-dark.svg
             profile/stats-light.svg
@@ -65,18 +66,27 @@ jobs:
           )
 
           for card in "${cards[@]}"; do
-            if [[ ! -s "$card" ]] || ! grep -q "<svg" "$card"; then
-              echo "::error file=$card::Generated card is empty or is not an SVG"
-              exit 1
-            fi
+            valid=true
 
-            if grep -Eqi \
+            if [[ ! -s "$card" ]] || ! grep -q "<svg" "$card"; then
+              echo "::warning file=$card::Generated card is empty or is not an SVG; preserving the previous version"
+              valid=false
+            elif grep -Eqi \
               "Something went wrong|Resource not accessible|Please try again later" \
               "$card"; then
-              echo "::error file=$card::Generated card contains an upstream API error"
-              exit 1
+              echo "::warning file=$card::Generated card contains an upstream API error; preserving the previous version"
+              valid=false
+            fi
+
+            if [[ "$valid" == false ]]; then
+              git restore --source=HEAD -- "$card"
+              invalid_count=$((invalid_count + 1))
             fi
           done
+
+          if (( invalid_count > 0 )); then
+            echo "Preserved $invalid_count previously valid card(s)."
+          fi
 
       - name: Generate contribution snake
         uses: Platane/snk/svg-only@v3
