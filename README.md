@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/DenverCoder1/readme-typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&amp;weight=600&amp;size=26&amp;pause=1100&amp;color=7C3AED&amp;center=true&amp;vCenter=true&amp;width=800&amp;height=70&amp;lines=Hi%2C+I%27m+Zhang+Zherui;AI+Agents+%C2%B7+RAG+Systems+%C2%B7+Developer+Tools;Build.+Trace.+Improve." alt="Typing introduction" />
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&amp;weight=600&amp;size=26&amp;pause=1100&amp;color=7C3AED&amp;center=true&amp;vCenter=true&amp;width=800&amp;height=70&amp;lines=Tech+OTAKUs+save+the+world" alt="Typing introduction" />
   </a>
 </p>
 
